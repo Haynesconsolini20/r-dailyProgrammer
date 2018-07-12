@@ -12,36 +12,36 @@ import unittest
 # turned out to be using it as the exponent, even in the base power case.
 
 
-def d(b, l, n):
+def knuth(b, l, n):
   if l == 1:
     return b ** n
   else:
     result = b
     for _ in range(1, n):
-      result = d(b, l - 1, result)
+      result = knuth(b, l - 1, result)
     return result
 
 class knuthTest(unittest.TestCase):
   def test_oneBang(self):
-    self.assertEqual(d(2, 1, 4), 16)
+    self.assertEqual(knuth(2, 1, 4), 16)
   
   def test_twoBangA(self):
-    self.assertEqual(d(2,2,3), 16)
+    self.assertEqual(knuth(2,2,3), 16)
 
   def test_twoBangB(self):
-    self.assertEqual(d(2,2,4), 65536)
+    self.assertEqual(knuth(2,2,4), 65536)
 
   def test_threeBang(self):
-    self.assertEqual(d(2,3,3), 65536)
+    self.assertEqual(knuth(2,3,3), 65536)
 
   def test_challenge1(self):
-    self.assertEqual(d(1, 1, 0), 1)
+    self.assertEqual(knuth(1, 1, 0), 1)
 
   def test_challenge2(self):
-    self.assertEqual(d(1,2,0), 1)
+    self.assertEqual(knuth(1,2,0), 1)
 
   def test_challenge3(self):
-    self.assertEqual(d(-1, 3, 3), -1)
+    self.assertEqual(knuth(-1, 3, 3), -1)
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(knuthTest)
