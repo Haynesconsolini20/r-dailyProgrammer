@@ -1,6 +1,18 @@
 #include <cmath>
 #include "simpleTest.h"
-
+/**************************************************************************************************************
+*CHALLENGE 365
+*DIFFICULTY: EASY
+*KNUTH UP ARROW NOTATION
+*Author: Sam Haynes
+*Date: 07/12/2018
+*Original language: Python 3
+*
+*This was a tough one, and it took me much longer than I'd like to admit. But a little bit of teamwork
+*with my roommate and a good night's sleep made the answer very clear the next morning. The difficult part
+*with this one was figuring out how to persist the result value through multiple computations. The key
+*turned out to be using it as the exponent, even in the base power case.
+***************************************************************************************************************/
 long knuth(long base, long level, long n) {
   if (level == 1)
     return pow(base, n);
