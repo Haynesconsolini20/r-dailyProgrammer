@@ -10,3 +10,5 @@ A series of completed challenges from r/dailyProgrammer
   * C++
 * 363: I before E
   * Python 3
+* 361: Tally
+  * Python 3
